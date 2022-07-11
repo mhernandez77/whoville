@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <!-- Theme Made By www.w3schools.com -->
   <title>Bootstrap Theme Company Page</title>
@@ -208,9 +208,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">HUB</a></li>
-        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#services">EMERGENCY SERVICES</a></li>
+        <li><a href="#portfolio">NEW ARTICLES</a></li>
+        <li><a href="#pricing">TRAFFIC UPDATES</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
@@ -219,16 +219,95 @@
 
 <div class="jumbotron text-center">
   <h1>Whosville Hub</h1> 
-  <p>We specialize in blablabla</p> 
-  <form>
+  <p>We specialize in blablabla</p>
     <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
-      </div>
-    </div>
+<!--      <input type="text" name="q" class="form-control" size="50" placeholder="Search Page" required>-->
+<!--          <input type="text" name="q" placeholder="{lang:Search}">-->
+<!--        </form>-->
+<!--      <form action="/search" method="get" name="search-form" id="search">-->
+      <form action="/search" method="get">
+        <input type="text" name="q" class="form-control" size="40" placeholder="Search Page" required/>
+        <input type="submit" value="Search" style="color: black" class="btn btn-danger"/>
+      </form>
+<!--    <div class="input-group-btn">-->
+<!--        <button type="button" class="btn btn-danger">Search</button>-->
+<!--    </div>-->
   </form>
 </div>
+</div>
+
+<script>
+/*<![CDATA[*/
+/* handle automatic form expand */
+// var searchFormText = document.getElementById('search-form-text');
+// var searchFormCollapse = document.getElementById('search-form-collapse');
+//
+// searchFormText.addEventListener('focus', function(){
+// searchFormCollapse.setAttribute('class', 'panel-collapse collapse in');
+// searchFormCollapse.setAttribute('aria-expanded', true);
+// });
+//
+// document.getElementById('search-form-collapse-toggle').addEventListener('click', function(){
+// var bIsOpen = document.getElementById('search-form-collapse').getAttribute('aria-expanded')
+//
+// if (bIsOpen === 'false') {
+// $('#search-form-collapse-toggle .advanced-text').addClass('hide');
+// $('#search-form-collapse-toggle .close-text').removeClass('hide');
+// } else if (bIsOpen === 'true' || bIsOpen === null) {
+// $('#search-form-collapse-toggle .advanced-text').removeClass('hide');
+// $('#search-form-collapse-toggle .close-text').addClass('hide');
+// }
+// });
+
+document.getElementById('input-type-all').addEventListener('change', function(e){
+if (e.target.checked) {
+document.getElementById('input-type-articles').checked = false;
+document.getElementById('input-type-collections').checked = false;
+document.getElementById('input-type-videos').checked = false;
+document.getElementById('input-type-images').checked = false;
+document.getElementById('input-type-documents').checked = false;
+}
+});
+
+var options = document.getElementsByClassName("search-include-options");
+for (var x in options) {
+if (typeof options[x] !== 'function' && typeof options[x] !== 'number') {
+options[x].addEventListener('change', function(){
+if (document.getElementById('input-type-all').checked) {
+document.getElementById('input-type-all').checked = false;
+}
+});
+}
+}
+
+
+
+if (/Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA)) {
+//Desktop Safari
+initFlatpickrJS();
+}
+
+if (uA.indexOf('Trident/') > -1) {
+initFlatpickrJS();
+}
+
+var elementArr = document.querySelectorAll('#search-form .search-submit');
+Array.prototype.slice.call(elementArr).forEach(function(e){
+if (e.addEventListener) {
+e.addEventListener(__tnt.client.clickEvent, function(){
+document.forms["search-form"].submit();
+});
+}
+});
+
+// document.getElementById('search-form').addEventListener('submit', function() {
+// // Filter query
+//   var elem = document.querySelector ( "#search-form input[name=q]" ),
+//           sQueryFiltered = elem.value.replace ( /\?/g, '' );
+//   elem.value = sQueryFiltered;
+// };
+
+</script>
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -267,17 +346,17 @@
   <div class="row slideanim">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
+      <h4>ELECTRICITY IMPROVEMENT</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
+      <h4>COMMUNITY EVENTS</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
+      <h4>WATER FIXTURES</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
@@ -285,17 +364,17 @@
   <div class="row slideanim">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
+      <h4>RECYCLING</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
+      <h4>CERTIFIED DRIVERS</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
+      <h4 style="color:#303030;">JOB POSTINGS</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
